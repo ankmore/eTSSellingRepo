@@ -1,0 +1,28 @@
+# ImpEx for Importing Prices
+
+# Macros / Replacement Parameter definitions
+$productCatalog=eTSSellingProductCatalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
+$prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
+
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+$taxGroup=Europe1PriceFactory_PTG(code)[default=us-sales-tax-full]
+
+		
+INSERT_UPDATE Product;code[unique=true];$prices;$approved;$catalogVersion;$taxGroup
+;1001;90,00 GBP, 100,48 USD;
+;1002;80,20 GBP, 90,50 USD;
+;1003;85,30 GBP, 95,20 USD;
+;1004;95,20 GBP, 70,60 USD;
+
+;2001;60,15 GBP, 73,65 USD;
+;2002;58,23 GBP, 62,48 USD;
+;2003;200,12 GBP, 252,15 USD;
+;2004;84,33 GBP, 92,25 USD;
+
+;3001;89,88 GBP, 98,48 USD;
+;3002;62,01 GBP, 70,00 USD;
+;3003;97,04 GBP, 101,19 USD;
+;3004;85,00 GBP, 95,00 USD;

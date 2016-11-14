@@ -1,0 +1,17 @@
+# ImpEx for Importing Categories
+
+# Macros / Replacement Parameter definitions
+$productCatalog=eTSSellingProductCatalog
+$productCatalogName=eTSSelling Product Catalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+# Language
+$lang=en
+
+# Create Categories
+UPDATE Category;code[unique=true];$catalogVersion;name[lang=$lang]
+;1;;PRODUCTS
+;100;;Flat Products
+;200;;Long Products
+;300;;Construction Products

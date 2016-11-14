@@ -1,0 +1,51 @@
+# ImpEx for Importing Products Stock Levels and Warehouses
+
+# Macros / Replacement Parameter definitions
+$productCatalog=eTSSellingProductCatalog
+$productCatalogName=eTSSelling Product Catalog
+$vendor=Tata Steel
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+
+INSERT_UPDATE Vendor;code[unique=true]
+;$vendor
+
+INSERT_UPDATE Warehouse;code[unique=true];name[lang=en];vendor(code);default[default=true]
+;warehouse_s;Warehouse South;$vendor;true
+;warehouse_e;Warehouse East;$vendor;true
+;warehouse_w;Warehouse West;$vendor;true
+;warehouse_n;Warehouse North;$vendor;true
+
+
+INSERT_UPDATE StockLevel;available;warehouse(code)[unique=true];inStockStatus(code);maxPreOrder;maxStockLevelHistoryCount;overSelling;preOrder;productCode[unique=true];reserved
+;100;warehouse_s;forceInStock;0;0;0;0;1001;
+;100;warehouse_e;forceInStock;0;0;0;0;1002;
+;100;warehouse_w;forceInStock;0;0;0;0;1003;
+;100;warehouse_n;notSpecified;0;0;0;0;1004;
+
+;200;warehouse_n;forceInStock;0;0;0;0;2001;
+;200;warehouse_w;notSpecified;0;0;0;0;2002;
+;200;warehouse_e;forceInStock;0;0;0;0;2003;
+;200;warehouse_s;forceInStock;0;0;0;0;2004;
+
+;300;warehouse_e;forceInStock;0;0;0;0;3001;
+;300;warehouse_n;forceInStock;0;0;0;0;3002;
+;300;warehouse_s;forceOutOfStock;0;0;0;0;3003;
+;300;warehouse_w;forceInStock;0;0;0;0;3004;
+
+UPDATE Product;code[unique=true];$catalogVersion;stockLevels(productCode,warehouse(code));vendors(code)
+;1001;;1001:warehouse_s;$vendor
+;1002;;1002:warehouse_e;$vendor
+;1003;;1003:warehouse_w;$vendor
+;1004;;1004:warehouse_n;$vendor
+
+;2001;;2001:warehouse_n;$vendor
+;2002;;2002:warehouse_w;$vendor
+;2003;;2003:warehouse_e;$vendor
+;2004;;2004:warehouse_s;$vendor
+
+;3001;;3001:warehouse_e;$vendor
+;3002;;3002:warehouse_n;$vendor
+;3003;;3003:warehouse_s;$vendor
+;3004;;3004:warehouse_w;$vendor

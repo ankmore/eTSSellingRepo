@@ -1,0 +1,170 @@
+# ImPex for Importing Product Media
+
+# Macros / Replacement Parameter definitions
+$productCatalog=eTSSellingProductCatalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog]
+$media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$data_sheet=data_sheet(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$siteResource=jar:com.etsselling.initialdata.setup.InitialDataSystemSetup&/eTSSellinginitialdata/import/sampledata/productCatalogs/$productCatalog
+
+# Create Media
+INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
+;1200Wx1200H;/1200Wx1200H/ts_flat_01.jpg;$siteResource/images/1200Wx1200H/ts_flat_01.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/ts_flat_02.jpg;$siteResource/images/1200Wx1200H/ts_flat_02.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/ts_flat_03.jpg;$siteResource/images/1200Wx1200H/ts_flat_03.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/ts_flat_04.jpg;$siteResource/images/1200Wx1200H/ts_flat_04.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/ts_long_01.jpg;$siteResource/images/1200Wx1200H/ts_long_01.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/ts_long_02.jpg;$siteResource/images/1200Wx1200H/ts_long_02.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/ts_long_03.jpg;$siteResource/images/1200Wx1200H/ts_long_03.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/ts_long_04.jpg;$siteResource/images/1200Wx1200H/ts_long_04.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/ts_construction_01.jpg;$siteResource/images/1200Wx1200H/ts_construction_01.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/ts_construction_02.jpg;$siteResource/images/1200Wx1200H/ts_construction_02.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/ts_construction_03.jpg;$siteResource/images/1200Wx1200H/ts_construction_03.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/ts_construction_04.jpg;$siteResource/images/1200Wx1200H/ts_construction_04.jpg;;;images
+
+
+;515Wx515H;/515Wx515H/ts_flat_01.jpg;$siteResource/images/515Wx515H/ts_flat_01.jpg;;;images
+;515Wx515H;/515Wx515H/ts_flat_02.jpg;$siteResource/images/515Wx515H/ts_flat_02.jpg;;;images
+;515Wx515H;/515Wx515H/ts_flat_03.jpg;$siteResource/images/515Wx515H/ts_flat_03.jpg;;;images
+;515Wx515H;/515Wx515H/ts_flat_04.jpg;$siteResource/images/515Wx515H/ts_flat_04.jpg;;;images
+
+;515Wx515H;/515Wx515H/ts_long_01.jpg;$siteResource/images/515Wx515H/ts_long_01.jpg;;;images
+;515Wx515H;/515Wx515H/ts_long_02.jpg;$siteResource/images/515Wx515H/ts_long_02.jpg;;;images
+;515Wx515H;/515Wx515H/ts_long_03.jpg;$siteResource/images/515Wx515H/ts_long_03.jpg;;;images
+;515Wx515H;/515Wx515H/ts_long_04.jpg;$siteResource/images/515Wx515H/ts_long_04.jpg;;;images
+
+;515Wx515H;/515Wx515H/ts_construction_01.jpg;$siteResource/images/515Wx515H/ts_construction_01.jpg;;;images
+;515Wx515H;/515Wx515H/ts_construction_02.jpg;$siteResource/images/515Wx515H/ts_construction_02.jpg;;;images
+;515Wx515H;/515Wx515H/ts_construction_03.jpg;$siteResource/images/515Wx515H/ts_construction_03.jpg;;;images
+;515Wx515H;/515Wx515H/ts_construction_04.jpg;$siteResource/images/515Wx515H/ts_construction_04.jpg;;;images
+
+
+;300Wx300H;/300Wx300H/ts_flat_01.jpg;$siteResource/images/300Wx300H/ts_flat_01.jpg;;;images
+;300Wx300H;/300Wx300H/ts_flat_02.jpg;$siteResource/images/300Wx300H/ts_flat_02.jpg;;;images
+;300Wx300H;/300Wx300H/ts_flat_03.jpg;$siteResource/images/300Wx300H/ts_flat_03.jpg;;;images
+;300Wx300H;/300Wx300H/ts_flat_04.jpg;$siteResource/images/300Wx300H/ts_flat_04.jpg;;;images
+
+;300Wx300H;/300Wx300H/ts_long_01.jpg;$siteResource/images/300Wx300H/ts_long_01.jpg;;;images
+;300Wx300H;/300Wx300H/ts_long_02.jpg;$siteResource/images/300Wx300H/ts_long_02.jpg;;;images
+;300Wx300H;/300Wx300H/ts_long_03.jpg;$siteResource/images/300Wx300H/ts_long_03.jpg;;;images
+;300Wx300H;/300Wx300H/ts_long_04.jpg;$siteResource/images/300Wx300H/ts_long_04.jpg;;;images
+
+;300Wx300H;/300Wx300H/ts_construction_01.jpg;$siteResource/images/300Wx300H/ts_construction_01.jpg;;;images
+;300Wx300H;/300Wx300H/ts_construction_02.jpg;$siteResource/images/300Wx300H/ts_construction_02.jpg;;;images
+;300Wx300H;/300Wx300H/ts_construction_03.jpg;$siteResource/images/300Wx300H/ts_construction_03.jpg;;;images
+;300Wx300H;/300Wx300H/ts_construction_04.jpg;$siteResource/images/300Wx300H/ts_construction_04.jpg;;;images
+
+
+;96Wx96H;/96Wx96H/ts_flat_01.jpg;$siteResource/images/96Wx96H/ts_flat_01.jpg;;;images
+;96Wx96H;/96Wx96H/ts_flat_02.jpg;$siteResource/images/96Wx96H/ts_flat_02.jpg;;;images
+;96Wx96H;/96Wx96H/ts_flat_03.jpg;$siteResource/images/96Wx96H/ts_flat_03.jpg;;;images
+;96Wx96H;/96Wx96H/ts_flat_04.jpg;$siteResource/images/96Wx96H/ts_flat_04.jpg;;;images
+
+;96Wx96H;/96Wx96H/ts_long_01.jpg;$siteResource/images/96Wx96H/ts_long_01.jpg;;;images
+;96Wx96H;/96Wx96H/ts_long_02.jpg;$siteResource/images/96Wx96H/ts_long_02.jpg;;;images
+;96Wx96H;/96Wx96H/ts_long_03.jpg;$siteResource/images/96Wx96H/ts_long_03.jpg;;;images
+;96Wx96H;/96Wx96H/ts_long_04.jpg;$siteResource/images/96Wx96H/ts_long_04.jpg;;;images
+
+;96Wx96H;/96Wx96H/ts_construction_01.jpg;$siteResource/images/96Wx96H/ts_construction_01.jpg;;;images
+;96Wx96H;/96Wx96H/ts_construction_02.jpg;$siteResource/images/96Wx96H/ts_construction_02.jpg;;;images
+;96Wx96H;/96Wx96H/ts_construction_03.jpg;$siteResource/images/96Wx96H/ts_construction_03.jpg;;;images
+;96Wx96H;/96Wx96H/ts_construction_04.jpg;$siteResource/images/96Wx96H/ts_construction_04.jpg;;;images
+
+#################Comming Soon###############
+
+;96Wx96H;/96Wx96H/ts_long_05.jpg;$siteResource/images/96Wx96H/ts_long_05.jpg;;;images
+;96Wx96H;/96Wx96H/ts_construction_05.jpg;$siteResource/images/96Wx96H/ts_construction_05.jpg;;;images
+
+######################################
+
+;65Wx65H;/65Wx65H/ts_flat_01.jpg;$siteResource/images/65Wx65H/ts_flat_01.jpg;;;images
+;65Wx65H;/65Wx65H/ts_flat_02.jpg;$siteResource/images/65Wx65H/ts_flat_02.jpg;;;images
+;65Wx65H;/65Wx65H/ts_flat_03.jpg;$siteResource/images/65Wx65H/ts_flat_03.jpg;;;images
+;65Wx65H;/65Wx65H/ts_flat_04.jpg;$siteResource/images/65Wx65H/ts_flat_04.jpg;;;images
+
+;65Wx65H;/65Wx65H/ts_long_01.jpg;$siteResource/images/65Wx65H/ts_long_01.jpg;;;images
+;65Wx65H;/65Wx65H/ts_long_02.jpg;$siteResource/images/65Wx65H/ts_long_02.jpg;;;images
+;65Wx65H;/65Wx65H/ts_long_03.jpg;$siteResource/images/65Wx65H/ts_long_03.jpg;;;images
+;65Wx65H;/65Wx65H/ts_long_04.jpg;$siteResource/images/65Wx65H/ts_long_04.jpg;;;images
+
+;65Wx65H;/65Wx65H/ts_construction_01.jpg;$siteResource/images/65Wx65H/ts_construction_01.jpg;;;images
+;65Wx65H;/65Wx65H/ts_construction_02.jpg;$siteResource/images/65Wx65H/ts_construction_02.jpg;;;images
+;65Wx65H;/65Wx65H/ts_construction_03.jpg;$siteResource/images/65Wx65H/ts_construction_03.jpg;;;images
+;65Wx65H;/65Wx65H/ts_construction_04.jpg;$siteResource/images/65Wx65H/ts_construction_04.jpg;;;images
+
+
+;30Wx30H;/30Wx30H/ts_flat_01.jpg;$siteResource/images/30Wx30H/ts_flat_01.jpg;;;images
+;30Wx30H;/30Wx30H/ts_flat_02.jpg;$siteResource/images/30Wx30H/ts_flat_02.jpg;;;images
+;30Wx30H;/30Wx30H/ts_flat_03.jpg;$siteResource/images/30Wx30H/ts_flat_03.jpg;;;images
+;30Wx30H;/30Wx30H/ts_flat_04.jpg;$siteResource/images/30Wx30H/ts_flat_04.jpg;;;images
+
+;30Wx30H;/30Wx30H/ts_long_01.jpg;$siteResource/images/30Wx30H/ts_long_01.jpg;;;images
+;30Wx30H;/30Wx30H/ts_long_02.jpg;$siteResource/images/30Wx30H/ts_long_02.jpg;;;images
+;30Wx30H;/30Wx30H/ts_long_03.jpg;$siteResource/images/30Wx30H/ts_long_03.jpg;;;images
+;30Wx30H;/30Wx30H/ts_long_04.jpg;$siteResource/images/30Wx30H/ts_long_04.jpg;;;images
+
+;30Wx30H;/30Wx30H/ts_construction_01.jpg;$siteResource/images/30Wx30H/ts_construction_01.jpg;;;images
+;30Wx30H;/30Wx30H/ts_construction_02.jpg;$siteResource/images/30Wx30H/ts_construction_02.jpg;;;images
+;30Wx30H;/30Wx30H/ts_construction_03.jpg;$siteResource/images/30Wx30H/ts_construction_03.jpg;;;images
+;30Wx30H;/30Wx30H/ts_construction_04.jpg;$siteResource/images/30Wx30H/ts_construction_04.jpg;;;images
+
+
+# Create Media Containers
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
+;ts_flat_01;/1200Wx1200H/ts_flat_01.jpg,/515Wx515H/ts_flat_01.jpg,/300Wx300H/ts_flat_01.jpg,/96Wx96H/ts_flat_01.jpg,/65Wx65H/ts_flat_01.jpg,/30Wx30H/ts_flat_01.jpg;
+;ts_flat_02;/1200Wx1200H/ts_flat_02.jpg,/515Wx515H/ts_flat_02.jpg,/300Wx300H/ts_flat_02.jpg,/96Wx96H/ts_flat_02.jpg,/65Wx65H/ts_flat_02.jpg,/30Wx30H/ts_flat_02.jpg;
+;ts_flat_03;/1200Wx1200H/ts_flat_03.jpg,/515Wx515H/ts_flat_03.jpg,/300Wx300H/ts_flat_03.jpg,/96Wx96H/ts_flat_03.jpg,/65Wx65H/ts_flat_03.jpg,/30Wx30H/ts_flat_03.jpg;
+;ts_flat_04;/1200Wx1200H/ts_flat_04.jpg,/515Wx515H/ts_flat_04.jpg,/300Wx300H/ts_flat_04.jpg,/96Wx96H/ts_flat_04.jpg,/65Wx65H/ts_flat_04.jpg,/30Wx30H/ts_flat_04.jpg;
+ 
+;ts_long_01;/1200Wx1200H/ts_long_01.jpg,/515Wx515H/ts_long_01.jpg,/300Wx300H/ts_long_01.jpg,/96Wx96H/ts_long_01.jpg,/65Wx65H/ts_long_01.jpg,/30Wx30H/ts_long_01.jpg;
+;ts_long_02;/1200Wx1200H/ts_long_02.jpg,/515Wx515H/ts_long_02.jpg,/300Wx300H/ts_long_02.jpg,/96Wx96H/ts_long_02.jpg,/65Wx65H/ts_long_02.jpg,/30Wx30H/ts_long_02.jpg;
+;ts_long_03;/1200Wx1200H/ts_long_03.jpg,/515Wx515H/ts_long_03.jpg,/300Wx300H/ts_long_03.jpg,/96Wx96H/ts_long_03.jpg,/65Wx65H/ts_long_03.jpg,/30Wx30H/ts_long_03.jpg;
+;ts_long_04;/1200Wx1200H/ts_long_04.jpg,/515Wx515H/ts_long_04.jpg,/300Wx300H/ts_long_04.jpg,/96Wx96H/ts_long_04.jpg,/65Wx65H/ts_long_04.jpg,/30Wx30H/ts_long_04.jpg;
+
+;ts_construction_01;/1200Wx1200H/ts_construction_01.jpg,/515Wx515H/ts_construction_01.jpg,/300Wx300H/ts_construction_01.jpg,/96Wx96H/ts_construction_01.jpg,/65Wx65H/ts_construction_01.jpg,/30Wx30H/ts_construction_01.jpg;
+;ts_construction_02;/1200Wx1200H/ts_construction_02.jpg,/515Wx515H/ts_construction_02.jpg,/300Wx300H/ts_construction_02.jpg,/96Wx96H/ts_construction_02.jpg,/65Wx65H/ts_construction_02.jpg,/30Wx30H/ts_construction_02.jpg;
+;ts_construction_03;/1200Wx1200H/ts_construction_03.jpg,/515Wx515H/ts_construction_03.jpg,/300Wx300H/ts_construction_03.jpg,/96Wx96H/ts_construction_03.jpg,/65Wx65H/ts_construction_03.jpg,/30Wx30H/ts_construction_03.jpg;
+;ts_construction_04;/1200Wx1200H/ts_construction_04.jpg,/515Wx515H/ts_construction_04.jpg,/300Wx300H/ts_construction_04.jpg,/96Wx96H/ts_construction_04.jpg,/65Wx65H/ts_construction_04.jpg,/30Wx30H/ts_construction_04.jpg;
+
+#########Comming Soon############
+
+;ts_long_05;/96Wx96H/ts_long_05.jpg;
+;ts_construction_05;/96Wx96H/ts_construction_05.jpg;
+
+#################################
+
+# Update Products with Media and Media Containers
+UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
+;1001;/300Wx300H/ts_flat_01.jpg;/96Wx96H/ts_flat_01.jpg;;/1200Wx1200H/ts_flat_01.jpg,/515Wx515H/ts_flat_01.jpg,/300Wx300H/ts_flat_01.jpg,/96Wx96H/ts_flat_01.jpg,/65Wx65H/ts_flat_01.jpg,/30Wx30H/ts_flat_01.jpg;/300Wx300H/ts_flat_01.jpg;/96Wx96H/ts_flat_01.jpg;ts_flat_01;
+;1002;/300Wx300H/ts_flat_02.jpg;/96Wx96H/ts_flat_02.jpg;;/1200Wx1200H/ts_flat_02.jpg,/515Wx515H/ts_flat_02.jpg,/300Wx300H/ts_flat_02.jpg,/96Wx96H/ts_flat_02.jpg,/65Wx65H/ts_flat_02.jpg,/30Wx30H/ts_flat_02.jpg;/300Wx300H/ts_flat_02.jpg;/96Wx96H/ts_flat_02.jpg;ts_flat_02;
+;1003;/300Wx300H/ts_flat_03.jpg;/96Wx96H/ts_flat_03.jpg;;/1200Wx1200H/ts_flat_03.jpg,/515Wx515H/ts_flat_03.jpg,/300Wx300H/ts_flat_03.jpg,/96Wx96H/ts_flat_03.jpg,/65Wx65H/ts_flat_03.jpg,/30Wx30H/ts_flat_03.jpg;/300Wx300H/ts_flat_03.jpg;/96Wx96H/ts_flat_03.jpg;ts_flat_03;
+;1004;/300Wx300H/ts_flat_04.jpg;/96Wx96H/ts_flat_04.jpg;;/1200Wx1200H/ts_flat_04.jpg,/515Wx515H/ts_flat_04.jpg,/300Wx300H/ts_flat_04.jpg,/96Wx96H/ts_flat_04.jpg,/65Wx65H/ts_flat_04.jpg,/30Wx30H/ts_flat_04.jpg;/300Wx300H/ts_flat_04.jpg;/96Wx96H/ts_flat_04.jpg;ts_flat_04;
+
+;2001;/300Wx300H/ts_long_01.jpg;/96Wx96H/ts_long_01.jpg;;/1200Wx1200H/ts_long_01.jpg,/515Wx515H/ts_long_01.jpg,/300Wx300H/ts_long_01.jpg,/96Wx96H/ts_long_01.jpg,/65Wx65H/ts_long_01.jpg,/30Wx30H/ts_long_01.jpg;/300Wx300H/ts_long_01.jpg;/96Wx96H/ts_long_01.jpg;ts_long_01;
+;2002;/300Wx300H/ts_long_02.jpg;/96Wx96H/ts_long_02.jpg;;/1200Wx1200H/ts_long_02.jpg,/515Wx515H/ts_long_02.jpg,/300Wx300H/ts_long_02.jpg,/96Wx96H/ts_long_02.jpg,/65Wx65H/ts_long_02.jpg,/30Wx30H/ts_long_02.jpg;/300Wx300H/ts_long_02.jpg;/96Wx96H/ts_long_02.jpg;ts_long_02;
+;2003;/300Wx300H/ts_long_03.jpg;/96Wx96H/ts_long_03.jpg;;/1200Wx1200H/ts_long_03.jpg,/515Wx515H/ts_long_03.jpg,/300Wx300H/ts_long_03.jpg,/96Wx96H/ts_long_03.jpg,/65Wx65H/ts_long_03.jpg,/30Wx30H/ts_long_03.jpg;/300Wx300H/ts_long_03.jpg;/96Wx96H/ts_long_03.jpg;ts_long_03;
+;2004;/300Wx300H/ts_long_04.jpg;/96Wx96H/ts_long_04.jpg;;/1200Wx1200H/ts_long_04.jpg,/515Wx515H/ts_long_04.jpg,/300Wx300H/ts_long_04.jpg,/96Wx96H/ts_long_04.jpg,/65Wx65H/ts_long_04.jpg,/30Wx30H/ts_long_04.jpg;/300Wx300H/ts_long_04.jpg;/96Wx96H/ts_long_04.jpg;ts_long_04;
+
+;3001;/300Wx300H/ts_construction_01.jpg;/96Wx96H/ts_construction_01.jpg;;/1200Wx1200H/ts_construction_01.jpg,/515Wx515H/ts_construction_01.jpg,/300Wx300H/ts_construction_01.jpg,/96Wx96H/ts_construction_01.jpg,/65Wx65H/ts_construction_01.jpg,/30Wx30H/ts_construction_01.jpg;/300Wx300H/ts_construction_01.jpg;/96Wx96H/ts_construction_01.jpg;ts_construction_01;
+;3002;/300Wx300H/ts_construction_02.jpg;/96Wx96H/ts_construction_02.jpg;;/1200Wx1200H/ts_construction_02.jpg,/515Wx515H/ts_construction_02.jpg,/300Wx300H/ts_construction_02.jpg,/96Wx96H/ts_construction_02.jpg,/65Wx65H/ts_construction_02.jpg,/30Wx30H/ts_construction_02.jpg;/300Wx300H/ts_construction_02.jpg;/96Wx96H/ts_construction_02.jpg;ts_construction_02;
+;3003;/300Wx300H/ts_construction_03.jpg;/96Wx96H/ts_construction_03.jpg;;/1200Wx1200H/ts_construction_03.jpg,/515Wx515H/ts_construction_03.jpg,/300Wx300H/ts_construction_03.jpg,/96Wx96H/ts_construction_03.jpg,/65Wx65H/ts_construction_03.jpg,/30Wx30H/ts_construction_03.jpg;/300Wx300H/ts_construction_03.jpg;/96Wx96H/ts_construction_03.jpg;ts_construction_03;
+;3004;/300Wx300H/ts_construction_04.jpg;/96Wx96H/ts_construction_04.jpg;;/1200Wx1200H/ts_construction_04.jpg,/515Wx515H/ts_construction_04.jpg,/300Wx300H/ts_construction_04.jpg,/96Wx96H/ts_construction_04.jpg,/65Wx65H/ts_construction_04.jpg,/30Wx30H/ts_construction_04.jpg;/300Wx300H/ts_construction_04.jpg;/96Wx96H/ts_construction_04.jpg;ts_construction_04;
+
+
+#########Comming Soon############
+
+;2005;/96Wx96H/ts_long_05.jpg;/96Wx96H/ts_long_05.jpg
+;3005;/96Wx96H/ts_construction_05.jpg;/96Wx96H/ts_construction_05.jpg;
+
+################################

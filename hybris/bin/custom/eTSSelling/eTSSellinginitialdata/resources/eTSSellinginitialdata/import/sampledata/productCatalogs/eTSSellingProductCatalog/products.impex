@@ -1,0 +1,32 @@
+# ImpEx for Importing Products
+
+# Macros / Replacement Parameter definitions
+$productCatalog=eTSSellingProductCatalog
+$productCatalogName=eTSSelling Product Catalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='approved']
+
+# Insert Products
+INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);comingSoon[default='false'];$catalogVersion;$approved
+;1001;100;Tata Steel;;pieces;
+;1002;100;Tata Steel;;pieces;
+;1003;100;Tata Steel;;pieces;
+;1004;100;Tata Steel;;pieces;
+;2001;200;Tata Steel;;pieces;
+;2002;200;Tata Steel;;pieces;
+;2003;200;Tata Steel;;pieces;
+;2004;200;Tata Steel;;pieces;
+;3001;300;Tata Steel;;pieces;
+;3002;300;Tata Steel;;pieces;
+;3003;300;Tata Steel;;pieces;
+;3004;300;Tata Steel;;pieces;
+
+########### Coming soon ############
+
+;2005;400;Tata Steel;;pieces;;;true
+;3005;400;Tata Steel;;pieces;;;true
+
+

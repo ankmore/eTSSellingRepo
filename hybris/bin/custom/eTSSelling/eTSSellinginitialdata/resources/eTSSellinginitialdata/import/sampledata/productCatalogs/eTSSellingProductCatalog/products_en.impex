@@ -1,0 +1,33 @@
+# ImpEx for Importing Product Localisations
+ 
+# Macros / Replacement Parameter definitions
+$productCatalog=eTSSellingProductCatalog
+$productCatalogName=eTSSelling Product Catalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+# Language
+$lang=en
+
+# Update allProducts with localisations
+UPDATE Product;code[unique=true];$catalogVersion;name[lang=$lang];summary[lang=$lang];description[lang=$lang]
+;1001;;Hot roll Steel;Tata Steel offers Hot roll;"<p>In India, Tata Astrum, the brand for HR Sheets & Coils from Tata Steel, redefines the norms of the market by virtue of its impeccable quality and superb offerings. Hot rolled coils and sheets have been the backbone of the infrastructure and manufacturing sector for years now. From steelmaking to final finishing, the entire production line incorporates advanced technologies and processes that make Tata Astrum a best-in-class product.</p>";
+;1002;;Cold roll Steel;Tata Steel offer cold roll;"<p> Tata Steel offers a comprehensive range of cold-rolled steel comprising both continuously-annealed and batch-annealed products. These can be customised to cater to specific requirements for formability, strength, surface finish or flatness. Coupled with consistent quality, the wide product selection provides opportunities for customers to optimise both products and processes.</p>";
+;1003;;Plain Steel Sheet;Tata Steel Offer Plain Sheet;"<p> Sheet metal is used for car bodies, airplane wings, medical tables, roofs for buildings (architecture) and many other applications. Sheet metal of iron and other materials with high magnetic permeability, also known as laminated steel cores, has applications in transformers and electric machines</p>";
+;1004;;Steel Plate;Tata Steel Offer Steel Plate;"<p>Steel Plate is metal formed by an industrial process into thin, flat pieces. It is one of the fundamental forms used in metalworking and it can be cut and bent into a variety of shapes.</p>";
+
+;2001;;Steel Tube;Tata Steel supplies Steel Tubular products;"<p>Tata Steel is a leading supplier of hot finished and cold formed steel tubular products ranging from small to large diameter, with varying wall thicknesses and grades of steel. The extensive range of welded tube products include structural hollow sections, large diameter pipe, coated, precision, conveyance and pressure tubes. The Group supplies the construction, conveyance and pressure, energy, automotive and engineering and precision tube markets across the globe.</p>";
+;2002;;Steel Rod;Tata Steel offer Steel Rod;"<p>Steel round rod has an unpolished (mill) surface, has been annealed, meets American Society for Testing and Materials International ASTM A276 specifications, and has a standard tolerance. </p>";
+;2003;;Golden Steel;Special Steels and Bar;"<p>Speciality Steels Business of Tata Steel is focused on offering carbon, alloy and stainless steels designed to meet the needs of some of the world's most demanding applications in markets ranging from aerospace to oil and gas, power generation to heavy good vehicles. Based on high quality Electric Arc steelmaking and mill processing capabilities, the business is able to supply a wide range of engineering steel types in a variety of sizes and product combinations.The range includes Aerospace Grades, Alloy Steels, Stainless Steels, Machining steels, and Micro-alloyed Steels.</p>";
+;2004;;Electro Plated Steel;Tata Steel offers a wide variety of electro-plated steel products;"<p>Tata Steel offers copper, brass, nickel and nickel-zinc plated cold-rolled steel strip products for industrial and commercial use. Tata Steel Plating has production sites and service centres in Europe and the USA, compliant with worldwide and local standards. The product range offers combinations of a variety of substrates, finishes and coatings to meet a wide range of applications, whilst optimising production processes and end-use of products.</p>";
+
+;3001;;Roof Sheets;Sheets for shade;"<p>The Tata Steel product range in roofing solutions extends from the traditional built up systems through composite systems to the modular Hi-Point system. The products provide flexibility in design and fast track construction.The Colorcoat range extends to roofing applications, along with Hi-Point,which is an advanced modular roofing system that provides an attractive, robust and cost effective solution for large-scale projects</p>";
+;3002;;Hollow Pipes;Welded Tubes;"<p>Tata Steel is a leading supplier of hot finished and cold formed steel tubular products ranging from small to large diameter, with varying wall thicknesses and grades of steel. The extensive range of welded tube products include structural hollow sections, large diameter pipe, coated, precision, conveyance and pressure tubes. The Group supplies the construction, conveyance and pressure, energy, automotive and engineering and precision tube markets across the globe.</p>";
+;3003;;Sections L;Structural sections;"<p>Tata Steel Structural Steel Hollow sections command several techno-economic advantages over conventional steel sections.Manufactured from world class Hot Rolled Coils of Tata Steel, it is noted for better compressive strength and enhanced shear capacity among several other advantages.Tata Steel Structural Hollow Sections are also lightweight and therefore more resistant to seismic forces.Thus it ensures high durability for the structures it supports and is preferred by architects in applications like space frames, staircases, roofs, trusses, purlins, portal frames etc.</p>";
+;3004;;Composite Floor Deck;Tata Steel supplies Composite floor deck;"<p>Tata Steel offers a wide choice of metallic coated steel for diverse and demanding applications. The product line comprises forming and structural grades and an extensive range of high-strength and advanced high-strength steels that include opportunities for weight savings and better component performance. Consistent quality also ensures reliable processing. High strength grades offer finished components increased strength and reduced steel thickness.</p>";
+
+
+##Comming soon#########
+
+;2005;;Square Steel Rod;Tata Steel offers new product Square Steel Rod;;
+;3005;;Construction steel;Tata Steel offers new product Construction steel;;
