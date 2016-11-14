@@ -33,5 +33,7 @@
     <extension name='customerticketingaddon' />
     <extension name='customersupportbackoffice' />
     
+    <!-- test git  -->
+    
   </extensions>
 </hybrisconfig>
