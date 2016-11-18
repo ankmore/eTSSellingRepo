@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Nov 14, 2016 11:20:31 AM                    ---
+ * --- Generated at Nov 16, 2016 4:33:15 PM                     ---
  * ----------------------------------------------------------------
  */
 package com.etsselling.core.jalo;
@@ -10,6 +10,7 @@ import com.etsselling.core.constants.ETSSellingCoreConstants;
 import com.etsselling.core.jalo.ApparelProduct;
 import com.etsselling.core.jalo.ApparelSizeVariantProduct;
 import com.etsselling.core.jalo.ApparelStyleVariantProduct;
+import com.etsselling.core.jalo.ETSSellingSizeVariantProduct;
 import com.etsselling.core.jalo.ElectronicsColorVariantProduct;
 import com.etsselling.jalo.ProductQuantityThresholdFreeGiftPromotion;
 import de.hybris.platform.jalo.GenericItem;
@@ -317,6 +318,32 @@ public abstract class GeneratedETSSellingCoreManager extends Extension
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final Map attributeValues)
 	{
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public ETSSellingSizeVariantProduct createETSSellingSizeVariantProduct(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( ETSSellingCoreConstants.TC.ETSSELLINGSIZEVARIANTPRODUCT );
+			return (ETSSellingSizeVariantProduct)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating eTSSellingSizeVariantProduct : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public ETSSellingSizeVariantProduct createETSSellingSizeVariantProduct(final Map attributeValues)
+	{
+		return createETSSellingSizeVariantProduct( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public ProductQuantityThresholdFreeGiftPromotion createProductQuantityThresholdFreeGiftPromotion(final SessionContext ctx, final Map attributeValues)

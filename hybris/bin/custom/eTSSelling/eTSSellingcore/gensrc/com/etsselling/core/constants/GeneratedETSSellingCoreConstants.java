@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Nov 14, 2016 11:20:31 AM                    ---
+ * --- Generated at Nov 16, 2016 4:33:15 PM                     ---
  * ----------------------------------------------------------------
  */
 package com.etsselling.core.constants;
@@ -20,6 +20,7 @@ public class GeneratedETSSellingCoreConstants
 		public static final String APPARELSIZEVARIANTPRODUCT = "ApparelSizeVariantProduct".intern();
 		public static final String APPARELSTYLEVARIANTPRODUCT = "ApparelStyleVariantProduct".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
+		public static final String ETSSELLINGSIZEVARIANTPRODUCT = "eTSSellingSizeVariantProduct".intern();
 		public static final String PRODUCTQUANTITYTHRESHOLDFREEGIFTPROMOTION = "ProductQuantityThresholdFreeGiftPromotion".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
 	}

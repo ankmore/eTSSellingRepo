@@ -10,7 +10,10 @@ $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[defa
 $lang=en
 
 # Update allProducts with localisations
-UPDATE Product;code[unique=true];$catalogVersion;name[lang=$lang];summary[lang=$lang];description[lang=$lang]
+#UPDATE Product;code[unique=true];$catalogVersion;name[lang=$lang];summary[lang=$lang];description[lang=$lang]
+UPDATE Product;code[unique=true];$catalogVersion;name[lang=$lang];summary[lang=$lang];description[lang=$lang];eTSSellingSizeVariantProduct.size[lang=$lang]
+
+		
 ;1001;;Hot roll Steel;Tata Steel offers Hot roll;"<p>In India, Tata Astrum, the brand for HR Sheets & Coils from Tata Steel, redefines the norms of the market by virtue of its impeccable quality and superb offerings. Hot rolled coils and sheets have been the backbone of the infrastructure and manufacturing sector for years now. From steelmaking to final finishing, the entire production line incorporates advanced technologies and processes that make Tata Astrum a best-in-class product.</p>";
 ;1002;;Cold roll Steel;Tata Steel offer cold roll;"<p> Tata Steel offers a comprehensive range of cold-rolled steel comprising both continuously-annealed and batch-annealed products. These can be customised to cater to specific requirements for formability, strength, surface finish or flatness. Coupled with consistent quality, the wide product selection provides opportunities for customers to optimise both products and processes.</p>";
 ;1003;;Plain Steel Sheet;Tata Steel Offer Plain Sheet;"<p> Sheet metal is used for car bodies, airplane wings, medical tables, roofs for buildings (architecture) and many other applications. Sheet metal of iron and other materials with high magnetic permeability, also known as laminated steel cores, has applications in transformers and electric machines</p>";
@@ -25,6 +28,11 @@ UPDATE Product;code[unique=true];$catalogVersion;name[lang=$lang];summary[lang=$
 ;3002;;Hollow Pipes;Welded Tubes;"<p>Tata Steel is a leading supplier of hot finished and cold formed steel tubular products ranging from small to large diameter, with varying wall thicknesses and grades of steel. The extensive range of welded tube products include structural hollow sections, large diameter pipe, coated, precision, conveyance and pressure tubes. The Group supplies the construction, conveyance and pressure, energy, automotive and engineering and precision tube markets across the globe.</p>";
 ;3003;;Sections L;Structural sections;"<p>Tata Steel Structural Steel Hollow sections command several techno-economic advantages over conventional steel sections.Manufactured from world class Hot Rolled Coils of Tata Steel, it is noted for better compressive strength and enhanced shear capacity among several other advantages.Tata Steel Structural Hollow Sections are also lightweight and therefore more resistant to seismic forces.Thus it ensures high durability for the structures it supports and is preferred by architects in applications like space frames, staircases, roofs, trusses, purlins, portal frames etc.</p>";
 ;3004;;Composite Floor Deck;Tata Steel supplies Composite floor deck;"<p>Tata Steel offers a wide choice of metallic coated steel for diverse and demanding applications. The product line comprises forming and structural grades and an extensive range of high-strength and advanced high-strength steels that include opportunities for weight savings and better component performance. Consistent quality also ensures reliable processing. High strength grades offer finished components increased strength and reduced steel thickness.</p>";
+
+;3004_1000x50x60mm;;Composite Floor Deck;Tata Steel supplies Composite floor deck in Small size;;1000x50x60mm
+;3004_2000x60x70mm;;Composite Floor Deck;Tata Steel supplies Composite floor deck in Medium size;;2000x60x70mm
+;3004_5000x70x80mm;;Composite Floor Deck;Tata Steel supplies Composite floor deck in Large size;;5000x70x80mm
+
 
 
 ##Comming soon#########

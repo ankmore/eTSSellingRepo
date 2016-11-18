@@ -11,6 +11,7 @@ $approved=approvalstatus(code)[default='approved']
 
 # Insert Products
 INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);comingSoon[default='false'];$catalogVersion;$approved
+
 ;1001;100;Tata Steel;;pieces;
 ;1002;100;Tata Steel;;pieces;
 ;1003;100;Tata Steel;;pieces;
@@ -22,7 +23,7 @@ INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufa
 ;3001;300;Tata Steel;;pieces;
 ;3002;300;Tata Steel;;pieces;
 ;3003;300;Tata Steel;;pieces;
-;3004;300;Tata Steel;;pieces;
+;3004;300;Tata Steel;;pieces;;eTSSellingSizeVariantProduct;
 
 ########### Coming soon ############
 
@@ -30,3 +31,8 @@ INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufa
 ;3005;400;Tata Steel;;pieces;;;true
 
 
+# Create eTSSellingSizeVariantProduct variants
+INSERT_UPDATE eTSSellingSizeVariantProduct;code[unique=true];$catalogVersion;$baseProduct;supercategories(code,$catalogVersion);unit(code)[default='pieces'];manufacturerName;$approved
+;3004_1000x50x60mm;;3004;300;;Tata Steel;
+;3004_2000x60x70mm;;3004;300;;Tata Steel;
+;3004_5000x70x80mm;;3004;300;;Tata Steel;

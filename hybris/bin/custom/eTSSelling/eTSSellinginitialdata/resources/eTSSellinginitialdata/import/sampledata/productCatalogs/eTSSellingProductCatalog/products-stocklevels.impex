@@ -34,7 +34,13 @@ INSERT_UPDATE StockLevel;available;warehouse(code)[unique=true];inStockStatus(co
 ;300;warehouse_s;forceOutOfStock;0;0;0;0;3003;
 ;300;warehouse_w;forceInStock;0;0;0;0;3004;
 
-UPDATE Product;code[unique=true];$catalogVersion;stockLevels(productCode,warehouse(code));vendors(code)
+;300;warehouse_w;forceInStock;0;0;0;0;3004_1000x50x60mm;
+;300;warehouse_w;forceInStock;0;0;0;0;3004_2000x60x70mm;
+;300;warehouse_w;forceInStock;0;0;0;0;3004_5000x70x80mm;
+
+#UPDATE Product;code[unique=true];$catalogVersion;stockLevels(productCode,warehouse(code));vendors(code)
+INSERT_UPDATE Product;code[unique=true];$catalogVersion;stockLevels(productCode,warehouse(code));vendors(code)
+
 ;1001;;1001:warehouse_s;$vendor
 ;1002;;1002:warehouse_e;$vendor
 ;1003;;1003:warehouse_w;$vendor
@@ -49,3 +55,7 @@ UPDATE Product;code[unique=true];$catalogVersion;stockLevels(productCode,warehou
 ;3002;;3002:warehouse_n;$vendor
 ;3003;;3003:warehouse_s;$vendor
 ;3004;;3004:warehouse_w;$vendor
+
+;3004_1000x50x60mm;;3004_1000x50x60mm:warehouse_w;$vendor
+;3004_2000x60x70mm;;3004_2000x60x70mm:warehouse_w;$vendor
+;3004_5000x70x80mm;;3004_5000x70x80mm:warehouse_w;$vendor

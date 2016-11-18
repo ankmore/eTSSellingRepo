@@ -26,3 +26,7 @@ INSERT_UPDATE Product;code[unique=true];$prices;$approved;$catalogVersion;$taxGr
 ;3002;62,01 GBP, 70,00 USD;
 ;3003;97,04 GBP, 101,19 USD;
 ;3004;85,00 GBP, 95,00 USD;
+
+;3004_1000x50x60mm;85,00 GBP, 95,00 USD;
+;3004_2000x60x70mm;95,00 GBP, 105,00 USD;
+;3004_5000x70x80mm;110,00 GBP, 1,00 USD;

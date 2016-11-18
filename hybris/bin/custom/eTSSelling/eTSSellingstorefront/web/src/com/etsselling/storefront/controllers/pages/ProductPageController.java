@@ -9,7 +9,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  *
- *  
+ *
  */
 package com.etsselling.storefront.controllers.pages;
 
@@ -41,7 +41,6 @@ import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
-import com.etsselling.storefront.controllers.ControllerConstants;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -72,7 +71,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.etsselling.storefront.controllers.ControllerConstants;
 import com.google.common.collect.Maps;
+
+
 
 
 /**
@@ -125,30 +127,30 @@ public class ProductPageController extends AbstractPageController
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public String productDetail(@PathVariable("productCode") final String productCode, final Model model,
 			final HttpServletRequest request, final HttpServletResponse response)
-					throws CMSItemNotFoundException, UnsupportedEncodingException
+			throws CMSItemNotFoundException, UnsupportedEncodingException
 	{
 		//added by ankita
-		
-				final ProductModel productModel = productService.getProductForCode(productCode);
-				//final Map<String, Boolean> allAddonsMap = new HashMap<String, Boolean>();
-				final List accessoryList = new ArrayList<>();
-				String rating = null;
 
-				/*
-				 * allAddonsMap.putAll(productModel.getAddons()); System.out.println(allAddonsMap);
-				 * model.addAttribute("allAddonsMap", allAddonsMap);
-				 */
+		final ProductModel productModel = productService.getProductForCode(productCode);
+		//final Map<String, Boolean> allAddonsMap = new HashMap<String, Boolean>();
+		final List accessoryList = new ArrayList<>();
+		String rating = null;
+
+		/*
+		 * allAddonsMap.putAll(productModel.getAddons()); System.out.println(allAddonsMap);
+		 * model.addAttribute("allAddonsMap", allAddonsMap);
+		 */
 
 
-				accessoryList.addAll(productModel.getAccessories());
-				model.addAttribute("accessoryList", accessoryList);
+		accessoryList.addAll(productModel.getAccessories());
+		model.addAttribute("accessoryList", accessoryList);
 
-				rating = productModel.getRating();
-				System.out.println(rating);
-				model.addAttribute("rating", rating);
-				
+		rating = productModel.getRating();
+		System.out.println(rating);
+		model.addAttribute("rating", rating);
+
 		//End of added by ankita
-				
+
 		final List<ProductOption> extraOptions = Arrays.asList(ProductOption.VARIANT_MATRIX_BASE, ProductOption.VARIANT_MATRIX_URL,
 				ProductOption.VARIANT_MATRIX_MEDIA);
 
@@ -243,7 +245,7 @@ public class ProductPageController extends AbstractPageController
 	{ RequestMethod.GET, RequestMethod.POST })
 	public String postReview(@PathVariable final String productCode, final ReviewForm form, final BindingResult result,
 			final Model model, final HttpServletRequest request, final RedirectAttributes redirectAttrs)
-					throws CMSItemNotFoundException
+			throws CMSItemNotFoundException
 	{
 		getReviewValidator().validate(form, result);
 
@@ -320,7 +322,7 @@ public class ProductPageController extends AbstractPageController
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN + "/writeReview", method = RequestMethod.POST)
 	public String writeReview(@PathVariable final String productCode, final ReviewForm form, final BindingResult result,
 			final Model model, final HttpServletRequest request, final RedirectAttributes redirectAttrs)
-					throws CMSItemNotFoundException
+			throws CMSItemNotFoundException
 	{
 		getReviewValidator().validate(form, result);
 

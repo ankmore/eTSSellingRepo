@@ -77,6 +77,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		);
 	
 		createItemType(
+			"eTSSellingSizeVariantProduct",
+			"VariantProduct",
+			com.etsselling.core.jalo.ETSSellingSizeVariantProduct.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
+		createItemType(
 			"ProductQuantityThresholdFreeGiftPromotion",
 			"ProductPromotion",
 			com.etsselling.jalo.ProductQuantityThresholdFreeGiftPromotion.class,
@@ -151,6 +161,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				single_createattr_ApparelStyleVariantProduct_swatchColors();
 			
 				single_createattr_ApparelSizeVariantProduct_size();
+			
+				single_createattr_eTSSellingSizeVariantProduct_size();
 			
 				single_createattr_Product_ComingSoon();
 			
@@ -236,6 +248,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 					
 				createPropertyAttribute(
 					"ApparelSizeVariantProduct", 
+					"size",  
+					null,
+					"localized:java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					"VariantAttributeDescriptor",
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_eTSSellingSizeVariantProduct_size() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"eTSSellingSizeVariantProduct", 
 					"size",  
 					null,
 					"localized:java.lang.String",
@@ -564,6 +593,21 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				{
 				Map customPropsMap = new HashMap();
 				
+				setItemTypeProperties(
+					"eTSSellingSizeVariantProduct",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_eTSSellingSizeVariantProduct_size();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
 				changeMetaType(
 					"Product",
 					null,
@@ -770,6 +814,28 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							
 							setAttributeProperties(
 								"ApparelSizeVariantProduct", 
+								"size",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								"VariantAttributeDescriptor",
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_eTSSellingSizeVariantProduct_size() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"eTSSellingSizeVariantProduct", 
 								"size",
 								false, 
 								null,
